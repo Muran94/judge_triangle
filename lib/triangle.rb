@@ -6,8 +6,8 @@ class Triangle
   end
   
   def is_triangle?
-    return false if on_the_same_line?(@coordinate1, @coordinate2, @coordinate3) # 3点の座標の、x座標が同一直線上にあるか
-    if on_the_same_line?(@coordinate1, @coordinate2, @coordinate3) # 3点の座標の、x座標が同一直線上にあるか
+     # 3点の座標が一直線上にあるか
+    if on_the_same_line?(@coordinate1, @coordinate2, @coordinate3)
       false
     else
       true
@@ -15,10 +15,6 @@ class Triangle
   end
 
   private
-
-  def set_coordinate(x, y)
-    [x, y]
-  end
 
   def on_the_same_line?(coordinate1, coordinate2, coordinate3)
     dx1 = (coordinate1[0].round(2) - coordinate2[0].round(2)) * 100
